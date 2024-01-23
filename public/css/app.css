@@ -11952,37 +11952,29 @@ main .my-container .main-input .main-input-field {
   gap: 5px;
 }
 main .my-container .main-input .main-input-field #enter {
-  width: 80%;
-  border: 2px solid #000;
-  color: #000;
-  font-family: Inter;
-  font-style: normal;
-  font-size: 16px;
-  font-weight: 400;
   height: 48px;
-  justify-content: center;
-  letter-spacing: -0.8px;
-  text-align: center;
+  width: 400px;
+  font-family: Inter;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #000;
+  border: 3px solid;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 2px 2px 0px 0px, 4px 4px 0px 0px, 3px 3px 0px 0px;
 }
 main .my-container .main-input .main-input-field #enter:focus {
   outline: none;
   border-color: #06f;
+  box-shadow: 1px 1px 0px 0px #06f, 2px 2px 0px 0px #06f, 2px 2px 0px 0px #06f, 4px 4px 0px 0px #06f, 3px 3px 0px 0px #06f;
 }
 main .my-container .main-input .main-input-field #addTask {
-  align-items: center;
-  background-color: #fff;
-  border: 2px solid #000;
-  color: #000;
-  cursor: pointer;
-  font-family: Inter;
-  font-style: normal;
-  font-size: 16px;
-  font-weight: 600;
   height: 48px;
-  justify-content: center;
-  letter-spacing: -0.8px;
-  width: 20%;
-  text-align: center;
+  width: 100px;
+  font-family: Inter;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #000;
+  border: 3px solid;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 2px 2px 0px 0px, 4px 4px 0px 0px, 3px 3px 0px 0px;
 }
 main .my-container .main-input .main-input-field #addTask:focus {
   color: #171e29;
@@ -12006,7 +11998,7 @@ main .my-container .main-input .my-menu .my-button {
   border: 2px solid #000;
   color: #000;
   cursor: pointer;
-  font-family: Inter, sans-serif;
+  font-family: Inter;
   font-size: 14px;
   font-weight: 600;
   height: 48px;
@@ -12107,6 +12099,10 @@ main .my-container .all-my-tasks .each-task .actions-btn #modify:hover {
 }
 main .my-container .all-my-tasks .each-task .actions-btn #delete:hover {
   background-color: red;
+  color: white;
+}
+main .my-container .all-my-tasks .each-task .actions-btn #save:hover {
+  background-color: black;
   color: white;
 }
 main .my-container .all-my-tasks .each-task .actions-btn .my-delete-buttons {

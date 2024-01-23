@@ -31,35 +31,27 @@ main
                 width: 800px
                 gap: 5px
                 #enter
-                    width: 80%
-                    border: 2px solid #000
-                    color: #000
-                    font-family: Inter
-                    font-style: normal
-                    font-size: 16px
-                    font-weight: 400
                     height: 48px
-                    justify-content: center
-                    letter-spacing: -.8px
-                    text-align: center
+                    width: 400px
+                    font-family: Inter
+                    font-size: 16px
+                    letter-spacing: 1px
+                    color: #000
+                    border: 3px solid
+                    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 2px 2px 0px 0px, 4px 4px 0px 0px, 3px 3px 0px 0px
                 #enter:focus
                     outline: none
                     border-color: #06f
+                    box-shadow: 1px 1px 0px 0px #06f, 2px 2px 0px 0px #06f, 2px 2px 0px 0px #06f, 4px 4px 0px 0px #06f, 3px 3px 0px 0px #06f
                 #addTask
-                    align-items: center
-                    background-color: #fff
-                    border: 2px solid #000
-                    color: #000
-                    cursor: pointer
-                    font-family: Inter
-                    font-style: normal                    
-                    font-size: 16px
-                    font-weight: 600
                     height: 48px
-                    justify-content: center
-                    letter-spacing: -.8px
-                    width: 20%
-                    text-align: center
+                    width: 100px
+                    font-family: Inter
+                    font-size: 16px
+                    letter-spacing: 1px
+                    color: #000
+                    border: 3px solid
+                    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 2px 2px 0px 0px, 4px 4px 0px 0px, 3px 3px 0px 0px
                 #addTask:focus 
                     color: #171e29
                 #addTask:hover 
@@ -79,7 +71,7 @@ main
                     border: 2px solid #000
                     color: #000
                     cursor: pointer
-                    font-family: Inter,sans-serif
+                    font-family: Inter
                     font-size: 14px
                     font-weight: 600
                     height: 48px
@@ -170,6 +162,9 @@ main
                     #delete:hover
                         background-color: red
                         color: white
+                    #save:hover
+                        background-color: black
+                        color: white
                     .my-delete-buttons
                         display: flex
                         justify-content: center
@@ -205,4 +200,11 @@ main
                 display: none
 
 
-    
+
+
+
+// @media (min-width: 768px) {
+//   .button-54 {
+//     padding: 0.25em 0.75em;
+//   }
+// }

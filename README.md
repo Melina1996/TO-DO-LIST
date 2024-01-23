@@ -1,2 +1,1 @@
-# Calculator
 # TO-DO-LIST

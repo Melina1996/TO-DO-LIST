@@ -32,7 +32,7 @@ function addTask(){
 }
 
 
-//event for my ADD-btn
+//ENTER activates my ADD-btn
 let input = document.getElementById("enter");
 input.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
@@ -47,19 +47,20 @@ eachTask.addEventListener("click",(e)=>{
   
   if (e.target.id == "validate") {
 
-
-
     e.target.parentElement.parentElement.setAttribute("status","done")
 
     e.target.parentElement.parentElement.style.background = "black"
     e.target.parentElement.parentElement.querySelector(".print-task-text").style.background = "black"
     e.target.parentElement.parentElement.querySelector(".print-task-text").style.color = "white"
+    e.target.parentElement.parentElement.style.boxShadow= "1px 1px 0px 0px yellow, 2px 2px 0px 0px yellow, 2px 2px 0px 0px yellow, 4px 4px 0px 0px yellow, 3px 3px 0px 0px yellow"
+
 
     
   } else if(e.target.id == "modify") {
     e.target.parentElement.parentElement.style.background = "white"
     e.target.parentElement.parentElement.querySelector(".print-task-text").style.background = "white"
     e.target.parentElement.parentElement.querySelector(".print-task-text").style.color = "black"
+    e.target.parentElement.parentElement.style.boxShadow= "none"
 
     e.target.parentElement.querySelector("#validate").classList.add("hide")
     
@@ -86,8 +87,6 @@ eachTask.addEventListener("click",(e)=>{
       } 
     })
 
-    console.log(myInput)
-    console.log(myInput.value)
   } else if(e.target.id == "delete"){
 
     //hide my delete-btn
@@ -115,10 +114,11 @@ eachTask.addEventListener("click",(e)=>{
   } 
 })
 
-//event listener for filtering
 
+//FILTERING
+
+//all my menu btns
 let btnAll = document.querySelector("#all")
-
 
 let btnProcess = document.querySelector("#in-process")
 
@@ -129,6 +129,9 @@ let elementsProcess = document.querySelectorAll("[status=in-process]")
 
 //all DONE elements
 let elementsDone = document.querySelectorAll("[status=done]")
+
+
+//depending on the btn clicked, I add a class "hide" to the respective elements that are not to be shown
 
 
 btnProcess.addEventListener("click",()=>{
