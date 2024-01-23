@@ -1,6 +1,6 @@
 //my variables
 
-let btnAdd = document.querySelector("#add")
+let btnAdd = document.querySelector("#addTask")
 
 let inputFieldMain = document.querySelector(".my-task-input")
 
