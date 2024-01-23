@@ -1,0 +1,67 @@
+main 
+    width: 100%
+    height: 100%
+
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    .my-container
+        width: 500px
+        height: fit-content
+
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        .main-input
+            width: 100%
+            height: 500px
+
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            .main-input-field
+                display: flex
+                .my-task-input
+                    width: 100%
+                    height: 40px
+                .my-menu
+                    width: 200%
+                    height: 30px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+        .all-my-tasks
+            width: 100%
+            height: 100%
+            .each-task
+                width: 100%
+                height: 100px
+
+                display: flex
+                flex-direction: column
+                .my-text-part
+                    width: 100%
+                    height: 80px
+                    position: relative
+                    .print-task-text
+                        width: 80%
+                        height: 30px
+                        color: black
+                        background: white
+                        position: absolute
+                    .modify-task-input
+                        width: 80%
+                        height: 30px
+                        position: absolute
+                    .hide
+                        display: none
+                .actions-btn
+                    width: 100%
+                    height: 20px
+            .hide
+                display: none
+                
+                
+

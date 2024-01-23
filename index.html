@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="./public/css/app.css">                
+    <title>TO-DO-LIST</title>
+</head>
+
+<body>
+    <main>
+            <div class="my-container">
+
+                <div class="main-input">
+                    <div class="main-input-field">
+                        <input class="my-task-input" type="text">
+                        <button id="add"><p>ADD</p></button>
+                    </div>
+                    <div class="my-menu">
+                        <button class="my-button" id="all">ALL</button>
+                        <button class="my-button" id="in-process">IN PROCESS</button>
+                        <button class="my-button" id="done">DONE</button>
+                    </div>
+                </div>
+
+                <div class="all-my-tasks">
+
+                    <div class="each-task hide">
+                        <div class="my-text-part">
+                            <div class="print-task-text"><p class="my-text"></p></div>
+                            <input class="modify-task-input hide" placeholder="" type="text">
+                        </div>
+                            <div class="actions-btn">
+                                <button class="my-button" id="validate">VALIDATE</button>
+                                <button class="my-button" id="modify">MODIFY</button>
+                                <button class="my-button" id="delete">DELETE</button>
+                            </div>
+                    </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>  
+
+
+    <footer>
+     
+    </footer>
+
+
+    <!-- link the js sheet  -->
+    <script src="./public/js/main.js"></script> 
+    <script src="./node_modules/@popperjs/core/dist/umd/popper.js"></script> 
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    
+</body>
+</html>
