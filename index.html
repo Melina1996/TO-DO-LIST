@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
-    <link rel="stylesheet" href="./public/css/app.css">                
+    <link rel="stylesheet" href="./public/css/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">                
     <title>TO-DO-LIST</title>
 </head>
 
@@ -14,7 +20,7 @@
 
                 <div class="main-input">
                     <div class="main-input-field">
-                        <input class="my-task-input" type="text">
+                        <input class="my-task-input" id="enter" type="text" placeholder="MY TO-DO">
                         <button id="addTask">ADD</button>
                     </div>
                     <div class="my-menu">
@@ -32,9 +38,14 @@
                             <input class="modify-task-input hide" type="text">
                         </div>
                             <div class="actions-btn">
-                                <button class="my-button" id="validate">VALIDATE</button>
+                                <button class="my-button" id="validate">DONE</button>
+                                <button class="my-button hide" id="save">SAVE</button>
                                 <button class="my-button" id="modify">MODIFY</button>
                                 <button class="my-button" id="delete">DELETE</button>
+                                <div class="my-delete-buttons hide">
+                                    <button class="my-delete-button" id="yes">YES</button>
+                                    <button class="my-delete-button" id="no">NO</button>
+                                </div>
                             </div>
                     </div>
 

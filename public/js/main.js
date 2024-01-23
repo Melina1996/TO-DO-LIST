@@ -10,28 +10,36 @@ let myModelDiv = document.querySelector(".each-task")
 
 
 function addTask(){
-  let newDiv = document.createElement("div")
-
-  newDiv.setAttribute("class","each-task")
-
-  newDiv.setAttribute("status","in-process")
-  
-  newDiv.innerHTML = myModelDiv.innerHTML
-  
-  eachTask.appendChild(newDiv)
-
-  let myOriginalTask = document.querySelectorAll(".my-text")
-  
   let valueInput = inputFieldMain.value
-  
-  //stores the new text into my last added task
-  myOriginalTask[myOriginalTask.length-1].innerText = valueInput
+
+  //only if task entered, it is added
+  if(valueInput.length !=0){
+    let newDiv = document.createElement("div")
+
+    newDiv.setAttribute("class","each-task")
+
+    newDiv.setAttribute("status","in-process")
+    
+    newDiv.innerHTML = myModelDiv.innerHTML
+    
+    eachTask.appendChild(newDiv)
+
+    let myOriginalTask = document.querySelectorAll(".my-text")
+    
+    //stores the new text into my last added task
+    myOriginalTask[myOriginalTask.length-1].innerText = valueInput.toUpperCase()
+  }
 }
 
 
 //event for my ADD-btn
+let input = document.getElementById("enter");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    btnAdd.click()}
+});
 
-btnAdd.addEventListener("click",addTask)
+btnAdd.addEventListener("click",addTask) 
 
 //event listener for whole section
 
@@ -39,19 +47,25 @@ eachTask.addEventListener("click",(e)=>{
   
   if (e.target.id == "validate") {
 
-    let myInput = e.target.parentElement.parentElement.querySelector(".modify-task-input")
 
-    if(myInput.value.length != 0){
-      e.target.parentElement.parentElement.querySelector(".my-text").innerText = myInput.value
-      myInput.classList.add("hide")
-    } 
 
     e.target.parentElement.parentElement.setAttribute("status","done")
 
-    e.target.parentElement.parentElement.style.background = "blue"
+    e.target.parentElement.parentElement.style.background = "black"
+    e.target.parentElement.parentElement.querySelector(".print-task-text").style.background = "black"
+    e.target.parentElement.parentElement.querySelector(".print-task-text").style.color = "white"
+
     
   } else if(e.target.id == "modify") {
     e.target.parentElement.parentElement.style.background = "white"
+    e.target.parentElement.parentElement.querySelector(".print-task-text").style.background = "white"
+    e.target.parentElement.parentElement.querySelector(".print-task-text").style.color = "black"
+
+    e.target.parentElement.querySelector("#validate").classList.add("hide")
+    
+    let saveBtn = e.target.parentElement.querySelector("#save")
+
+    saveBtn.classList.remove("hide")
 
     e.target.parentElement.parentElement.setAttribute("status","in-process")
     let myInput = e.target.parentElement.parentElement.querySelector(".modify-task-input")
@@ -59,11 +73,45 @@ eachTask.addEventListener("click",(e)=>{
     myInput.setAttribute("class","modify-task-input")
     //want to retake the before entered text as value to be able to mmodify it in the field
     myInput.value = e.target.parentElement.parentElement.querySelector(".my-text").innerText
+
+    saveBtn.addEventListener("click",()=>{
+      let myInput = e.target.parentElement.parentElement.querySelector(".modify-task-input")
+
+      if(myInput.value.length != 0){
+        e.target.parentElement.parentElement.querySelector(".my-text").innerText = myInput.value.toUpperCase()
+        myInput.classList.add("hide")
+        e.target.parentElement.querySelector("#validate").classList.remove("hide")
+    
+        saveBtn.classList.add("hide")
+      } 
+    })
+
     console.log(myInput)
     console.log(myInput.value)
   } else if(e.target.id == "delete"){
-    console.log(e.target.id)
-    e.target.parentElement.parentElement.remove()
+
+    //hide my delete-btn
+    e.target.classList.add("hide")
+
+    let myBtnsDelete = e.target.parentElement.querySelector(".my-delete-buttons")
+
+    //show my two confirmation btns
+    myBtnsDelete.classList.remove("hide")
+
+    myBtnsDelete.addEventListener("click",(y)=>{
+      if(y.target.id == "yes"){
+        
+        //delete the parent-element
+        e.target.parentElement.parentElement.remove()
+
+      } else{
+        //show my normal delete-btn again
+        e.target.classList.remove("hide")
+
+        //hide my two confirmation btns
+        myBtnsDelete.classList.add("hide")
+      }
+    })
   } 
 })
 
