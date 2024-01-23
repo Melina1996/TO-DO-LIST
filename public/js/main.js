@@ -1,4 +1,4 @@
-//my variables
+//declaration of first variables
 
 let btnAdd = document.querySelector("#addTask")
 
@@ -8,11 +8,12 @@ let eachTask = document.querySelector(".all-my-tasks")
 
 let myModelDiv = document.querySelector(".each-task")
 
+//function to add user input as task element
 
 function addTask(){
   let valueInput = inputFieldMain.value
 
-  //only if task entered, it is added
+  //only if task entered, a new Div is created with a class and a status-attribute
   if(valueInput.length !=0){
     let newDiv = document.createElement("div")
 
@@ -20,6 +21,7 @@ function addTask(){
 
     newDiv.setAttribute("status","in-process")
     
+    //the new Div is assigned the HTML-content of the model div
     newDiv.innerHTML = myModelDiv.innerHTML
     
     eachTask.appendChild(newDiv)
@@ -39,48 +41,60 @@ input.addEventListener("keypress", function(event) {
     btnAdd.click()}
 });
 
+//add event listener to my button ADD
 btnAdd.addEventListener("click",addTask) 
 
-//event listener for whole section
+//Different actions (save,modify,delete,save): event listener to the section with all my tasks
 
 eachTask.addEventListener("click",(e)=>{
   
   if (e.target.id == "validate") {
 
+    //targeted element gets status "done" and some style changes follow 
     e.target.parentElement.parentElement.setAttribute("status","done")
 
     e.target.parentElement.parentElement.style.background = "black"
     e.target.parentElement.parentElement.querySelector(".print-task-text").style.background = "black"
+    e.target.parentElement.parentElement.style.borderBottom = "white 1px solid"
     e.target.parentElement.parentElement.querySelector(".print-task-text").style.color = "white"
     e.target.parentElement.parentElement.style.boxShadow= "1px 1px 0px 0px yellow, 2px 2px 0px 0px yellow, 2px 2px 0px 0px yellow, 4px 4px 0px 0px yellow, 3px 3px 0px 0px yellow"
 
 
     
   } else if(e.target.id == "modify") {
+    //previous style changes are removed
     e.target.parentElement.parentElement.style.background = "white"
     e.target.parentElement.parentElement.querySelector(".print-task-text").style.background = "white"
     e.target.parentElement.parentElement.querySelector(".print-task-text").style.color = "black"
     e.target.parentElement.parentElement.style.boxShadow= "none"
 
+    //button "done" is hidden and button "save" is shown
     e.target.parentElement.querySelector("#validate").classList.add("hide")
     
     let saveBtn = e.target.parentElement.querySelector("#save")
 
     saveBtn.classList.remove("hide")
 
+    //set status to "in-process"
     e.target.parentElement.parentElement.setAttribute("status","in-process")
+
     let myInput = e.target.parentElement.parentElement.querySelector(".modify-task-input")
-    //take "hide"-class away
+    
+    //overwrite "hide"-class
     myInput.setAttribute("class","modify-task-input")
+
     //want to retake the before entered text as value to be able to mmodify it in the field
     myInput.value = e.target.parentElement.parentElement.querySelector(".my-text").innerText
 
+    //event for my "save"-btn
     saveBtn.addEventListener("click",()=>{
-      let myInput = e.target.parentElement.parentElement.querySelector(".modify-task-input")
 
-      if(myInput.value.length != 0){
-        e.target.parentElement.parentElement.querySelector(".my-text").innerText = myInput.value.toUpperCase()
-        myInput.classList.add("hide")
+      let myInputTwo = e.target.parentElement.parentElement.querySelector(".modify-task-input")
+
+      //if input is not empty
+      if(myInputTwo.value.length != 0){
+        e.target.parentElement.parentElement.querySelector(".my-text").innerText = myInputTwo.value.toUpperCase()
+        myInputTwo.classList.add("hide")
         e.target.parentElement.querySelector("#validate").classList.remove("hide")
     
         saveBtn.classList.add("hide")
